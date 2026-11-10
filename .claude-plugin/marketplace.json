@@ -1,0 +1,14 @@
+{
+  "name": "reeliza",
+  "description": "Plugin de Reeliza para Claude Code: skills con el prefijo reeliza:.",
+  "owner": {
+    "name": "Nestor Segura"
+  },
+  "plugins": [
+    {
+      "name": "reeliza",
+      "source": "./",
+      "description": "Skills de Reeliza: /reeliza:audita-script y /reeliza:contenido."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "reeliza",
+  "version": "0.1.0",
+  "description": "Skills para trabajar con Reeliza desde Claude: auditar guiones con tu voz y crear carruseles y guiones sobre tus datos.",
+  "author": { "name": "Nestor Segura" },
+  "homepage": "https://reeliza.com"
+}
