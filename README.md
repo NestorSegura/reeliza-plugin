@@ -10,6 +10,6 @@ Necesita la conexión MCP de Reeliza (Reeliza → Cuenta → «Conexión con Cla
 ## Instalar
 
 ```
-claude plugin marketplace add <ruta-o-repo>
+claude plugin marketplace add NestorSegura/reeliza-plugin
 claude plugin install reeliza@reeliza
 ```
