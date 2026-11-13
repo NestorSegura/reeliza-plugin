@@ -52,7 +52,7 @@ borrador que la persona revisa, aprueba y publica en Reeliza.
 
 Si ya existe la pieza y solo cambian textos: `reeliza_pieza` (guarda `updated_at`), cambia lo pedido y guarda con
 `pieza_id` y ese `updated_at`, enviando `"imagen": true` en las diapositivas que ya tienen archivo para conservarlo.
-Un archivo subido nunca se pierde en silencio: si falta la marca, Reeliza rechaza el guardado.
+Un archivo subido nunca se pierde en silencio. Reeliza solo acepta diapositivas de imagen: si envías plantilla, maqueta o elemento, rechaza el guardado.
 
 ### Guion de reel
 
