@@ -37,6 +37,8 @@ corre aquí, en su Claude (sin costo de IA para Reeliza); Reeliza solo guarda.
 4. **Guardar la versión final.** `reeliza_guardar_guion` con `pieza_id`, `updated_at`, el mismo `titulo`, las escenas
    finales (mismos roles salvo que la persona pida otro orden) y el hook = texto del gancho. Si Reeliza responde que la
    pieza cambió, vuelve a leerla y aplica la versión final sobre la nueva; nunca la pises.
+   Si la pieza está en formato `otro`, elige el que le corresponde de `formatos_de_pieza` (`reeliza_contexto`), dilo en
+   una línea y envíalo en `formato_contenido`.
 5. **Aprender.** Añade al final de `~/.config/reeliza/voz.md` (créalo si no existe) 1 a 3 líneas con lo que la persona
    eligió y por qué, solo si es una preferencia que se repite o es clara. Formato: `- AAAA-MM-DD · <preferencia>
    (ej.: «prefiere "fíjate" a "mira"»; «los ganchos con pregunta le suenan forzados»)`. No anotes cambios puntuales.

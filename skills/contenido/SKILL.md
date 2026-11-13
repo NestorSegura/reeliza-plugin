@@ -32,13 +32,17 @@ borrador que la persona revisa, aprueba y publica en Reeliza.
    el hook, cierre con la llamada a la acción. Escribe también el pie de foto y la **hipótesis**: qué crees que pasará
    y por qué («si abro con la pérdida concreta, los guardados suben»). La hipótesis va en el campo `hipotesis`; el
    veredicto lo da la persona en Reeliza después de publicar.
+   Elige también el **formato** de la pieza: `reeliza_contexto` trae `formatos_de_pieza` (clave, nombre y guía de
+   cada uno). Escoge el que describe cómo está armada la pieza y dile a la persona cuál elegiste y por qué, en una
+   línea; ella no tiene que saberse la lista. Usa `otro` solo si de verdad ninguno encaja. Va en `formato_contenido`
+   y Reeliza rechaza crear una pieza sin él.
 4. **Crear las imágenes** con el skill de carruseles del second brain y el kit de marca local de la persona.
    Cada diapositiva es un JPEG (o PNG) de 1080 × 1350 px. Guárdalas en la copia local (paso 5) con nombres que
    conserven el orden: `01.jpg`, `02.jpg`… Mira cada imagen antes de subirla.
 5. **Copia local.** En `<carpeta>/<AAAA-MM-DD>-<slug>/` guarda las imágenes, `carrusel.json` (exactamente lo que vas a
    enviar) y `notas.md` (idea, hook elegido, hipótesis, alternativas descartadas, fuentes).
 6. **Guardar con huecos.** `reeliza_guardar_carrusel` con una diapositiva por imagen, todas con `"imagen": true`
-   (llevan `rol`, y `titulo`/`texto` solo como texto alternativo). Incluye `caption`, `cta`, `hipotesis` y `fecha`. La respuesta trae
+   (llevan `rol`, y `titulo`/`texto` solo como texto alternativo). Incluye `caption`, `cta`, `hipotesis`, `formato_contenido` y `fecha`. La respuesta trae
    `huecos` (las diapositivas que esperan archivo) y el `pieza_id`.
 7. **Subir cada hueco.** Para cada número de `huecos`, en orden:
    1. Calcula el tamaño exacto: `wc -c < 01.jpg`.
@@ -56,10 +60,13 @@ Un archivo subido nunca se pierde en silencio. Reeliza solo acepta diapositivas 
 
 ### Guion de reel
 
-Para un reel o video: `reeliza_guardar_guion` con `titulo`, `fecha`, `hipotesis` y las `escenas` (`rol`, `texto` que se
+Para un reel o video: `reeliza_guardar_guion` con `titulo`, `fecha`, `hipotesis`, `formato_contenido` (elegido de `formatos_de_pieza`, como en el carrusel) y las `escenas` (`rol`, `texto` que se
 dice, `pantalla` con el texto en pantalla, `segundos`). La estructura es fija: empieza por `gancho` y sigue `quedate`,
 `presentacion`, `problema`, `solucion` (puede repetirse), `remate`, `cierre`. Guarda la copia local igual. El video lo
 graba o edita la persona; Reeliza no recibe archivos de reels por aquí.
+
+Si una pieza ya guardada quedó con un formato que no le corresponde (por ejemplo `otro`), corrígelo con
+`reeliza_ajustar_pieza` y `formato_contenido`; se puede también en piezas publicadas.
 
 ## B. Revisar y optimizar el calendario
 
